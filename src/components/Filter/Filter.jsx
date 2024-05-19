@@ -7,15 +7,15 @@ export const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
 
-  //filter name based on the the search keyword
   const handleFilterChange = e => {
     dispatch(setFilter(e.target.value));
   };
 
   return (
-    <div className={css.container}>
-      <p>Find Contacts by Name</p>
+    <div className={css.filterContainer}>
+      <p className={css.filterLabel}>Find Contacts by Name</p>
       <input
+        className={css.filterInput}
         type="text"
         name="filter"
         placeholder="Search by name"

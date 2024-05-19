@@ -6,6 +6,7 @@ import { selectFilteredContacts, selectError, selectIsLoading } from '../../redu
 import { fetchContacts } from '../../redux/contacts/contactsOperation';
 import { ContactListItem } from './ContactListItem/ContactListItem';
 import { Loader } from 'components/Loader/Loader';
+import css from './ContactList.module.css';
 
 export const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
@@ -19,16 +20,15 @@ export const ContactList = () => {
   }, [dispatch]);
 
   return (
-    <ul>
-      {/* if loading and not error, show Loader */}
+    <ul className={css.contactList}>
       {isLoading && !error && <Loader />}
 
-      {/* if not loading, not error and filtered contacts is empty, show warning */}
       {!isLoading && !error && filteredContacts.length === 0 && (
-        <p>The Phonebook is empty. Please add a contact</p>
+        <p className={css.contactsText}>
+          The Phonebook is empty. Please add a contact
+        </p>
       )}
 
-      {/* if not loading, not error and have atleast 1 filtered contact, show ContactListItem */}
       {!isLoading &&
         !error &&
         filteredContacts.length > 0 &&

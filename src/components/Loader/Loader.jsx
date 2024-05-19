@@ -1,5 +1,5 @@
-import { PropagateLoader } from 'react-spinners';
+import { HashLoader } from 'react-spinners';
 
 export const Loader = () => {
-  return <PropagateLoader color="#36d7b7" />;
+  return <HashLoader color="#e84a5f" />;
 };

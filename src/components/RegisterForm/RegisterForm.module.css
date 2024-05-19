@@ -14,7 +14,7 @@
 }
 
 .registerFormInput:hover,
-.registerFormInput:active {
+.registerFormInput:focus {
   outline: none;
   border: 2px solid #e84a5f;
 }
@@ -27,7 +27,7 @@
 }
 
 .registerFormBtn:hover,
-.registerFormBtn:active {
+.registerFormBtn:focus {
   border-color: #e84a5f;
   background-color: #e84a5f;
   color: white;

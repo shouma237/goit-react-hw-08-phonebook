@@ -6,7 +6,6 @@ import { deleteContact } from '../../../redux/contacts/contactsOperation';
 export const ContactListItem = ({ filteredContact }) => {
   const dispatch = useDispatch();
 
-  // handleDelete method
   const handleDelete = () => {
     dispatch(deleteContact(filteredContact.id));
   };
@@ -15,7 +14,9 @@ export const ContactListItem = ({ filteredContact }) => {
     <li className={css.contactListItem}>
       <p>{filteredContact.name}:</p>
       <p>{filteredContact.number}</p>
-      <button onClick={handleDelete}>Delete</button>
+      <button className={css.delBtn} onClick={handleDelete}>
+        Delete
+      </button>
     </li>
   );
 };
